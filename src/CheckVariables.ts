@@ -631,5 +631,6 @@ export const checkVariablesOnLoad = (data: PlayerSave) => {
     if (data.shopBuyMaxToggle === undefined) {
         player.shopBuyMaxToggle = false;
         player.shopConfirmationToggle = true;
+        player.shopHideToggle = false;
     }
 }

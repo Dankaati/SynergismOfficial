@@ -562,6 +562,78 @@ export const visualUpdateShop = () => {
                     DOMCacheGetOrSet(`${key}Button`).textContent = 'Maxed!':
                     DOMCacheGetOrSet(`${key}Button`).textContent = 'Upgrade +'+format(metaData.levelCanBuy - player.shopUpgrades[key],0,true)+ ' for ' + format(metaData.cost,0,true) + ' Quarks';
             }
+
+            if (player.shopHideToggle && player.shopUpgrades[key] === shopItem.maxLevel && shopData[key].refundable === false) {
+                if (player.singularityCount >= 20) {
+                    shopData.offeringAuto.refundable = false;
+                    shopData.offeringEX.refundable = false;
+                    shopData.obtainiumAuto.refundable = false;
+                    shopData.obtainiumEX.refundable = false;
+                    shopData.antSpeed.refundable = false;
+                    shopData.cashGrab.refundable = false;
+                }
+                DOMCacheGetOrSet(`${key}Hide`).style.display = 'none';
+            } else if (!player.shopHideToggle && shopData[key].refundable === false) {
+                DOMCacheGetOrSet('instantChallengeHide').style.display = 'block';
+                DOMCacheGetOrSet('calculatorHide').style.display = 'block';
+                if (shopData.offeringAuto.refundable === false) {
+                    DOMCacheGetOrSet('offeringAutoHide').style.display = 'block';
+                    DOMCacheGetOrSet('offeringEXHide').style.display = 'block';
+                    DOMCacheGetOrSet('obtainiumAutoHide').style.display = 'block';
+                    DOMCacheGetOrSet('obtainiumEXHide').style.display = 'block';
+                    DOMCacheGetOrSet('antSpeedHide').style.display = 'block';
+                    DOMCacheGetOrSet('cashGrabHide').style.display = 'block';
+                }
+                if (player.achievements[127] === 1) {
+                    DOMCacheGetOrSet('antSpeedHide').style.display = 'block';
+                    DOMCacheGetOrSet('cashGrabHide').style.display = 'block';
+                }
+                if (player.achievements[134] === 1) {
+                    DOMCacheGetOrSet('shopTalismanHide').style.display = 'block';
+                }
+                if (player.ascensionCount > 0) {
+                    DOMCacheGetOrSet('challengeExtensionHide').style.display = 'block';
+                    DOMCacheGetOrSet('seasonPassHide').style.display = 'block';
+                    DOMCacheGetOrSet('challengeTomeHide').style.display = 'block';
+                    DOMCacheGetOrSet('cubeToQuarkHide').style.display = 'block';
+                }
+                if (player.challengecompletions[11] > 0) {
+                    DOMCacheGetOrSet('tesseractToQuarkHide').style.display = 'block';
+                    DOMCacheGetOrSet('calculator2Hide').style.display = 'block';
+                }
+                if (player.challengecompletions[12] > 0) {
+                    DOMCacheGetOrSet('chronometerHide').style.display = 'block';
+                }
+                if (player.challengecompletions[13] > 0) {
+                    DOMCacheGetOrSet('hypercubeToQuarkHide').style.display = 'block';
+                    DOMCacheGetOrSet('calculator3Hide').style.display = 'block';
+                }
+                if (player.challengecompletions[14] > 0) {
+                    DOMCacheGetOrSet('seasonPass2Hide').style.display = 'block';
+                    DOMCacheGetOrSet('seasonPass3Hide').style.display = 'block';
+                    DOMCacheGetOrSet('infiniteAscentHide').style.display = 'block';
+                    DOMCacheGetOrSet('constantEXHide').style.display = 'block';
+                }
+                if (player.challenge15Exponent >= 1e15) {
+                    DOMCacheGetOrSet('chronometer2Hide').style.display = 'block';
+                    DOMCacheGetOrSet('seasonPassYHide').style.display = 'block';
+                    DOMCacheGetOrSet('powderEXHide').style.display = 'block';
+                }
+                if (player.singularityUpgrades.wowPass.getEffect().bonus) {
+                    DOMCacheGetOrSet('seasonPassZHide').style.display = 'block';
+                    DOMCacheGetOrSet('challengeTome2Hide').style.display = 'block';
+                    DOMCacheGetOrSet('chronometer3Hide').style.display = 'block';
+                }
+                if (player.singularityUpgrades.wowPass2.getEffect().bonus > 0) {
+                    DOMCacheGetOrSet('cashGrab2Hide').style.display = 'block';
+                    DOMCacheGetOrSet('cubeToQuarkAllHide').style.display = 'block';
+                    DOMCacheGetOrSet('chronometerZHide').style.display = 'block';
+                    DOMCacheGetOrSet('offeringEX2Hide').style.display = 'block';
+                    DOMCacheGetOrSet('obtainiumEX2Hide').style.display = 'block';
+                    DOMCacheGetOrSet('powderAutoHide').style.display = 'block';
+                    DOMCacheGetOrSet('seasonPassLostHide').style.display = 'block';
+                }
+            }
         }
     }
 
