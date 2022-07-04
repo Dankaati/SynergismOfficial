@@ -108,21 +108,6 @@ export const revealStuff = () => {
         player.achievements[124] === 1 ? example16[i].style.display = 'block' : example16[i].style.display = 'none'
     }
 
-    const example17 = document.getElementsByClassName('chal8') as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < example17.length; i++) {
-        const parent = example17[i].parentElement!;
-        if (parent.classList.contains('offlineStats')) {
-            example17[i].style.display = player.achievements[127] === 1 ? 'flex' : 'none';
-        } else {
-            example17[i].style.display = player.achievements[127] === 1 ? 'block' : 'none';
-        }
-    }
-
-    const example18 = document.getElementsByClassName('chal9') as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < example18.length; i++) {
-        player.achievements[134] === 1 ? example18[i].style.display = 'block' : example18[i].style.display = 'none'
-    }
-
     const example19 = document.getElementsByClassName('chal9x1') as HTMLCollectionOf<HTMLElement>;
     for (let i = 0; i < example19.length; i++) {
         player.highestchallengecompletions[9] > 0 ? example19[i].style.display = 'block' : example19[i].style.display = 'none'
@@ -131,36 +116,6 @@ export const revealStuff = () => {
     const example20 = document.getElementsByClassName('chal10') as HTMLCollectionOf<HTMLElement>;
     for (let i = 0; i < example20.length; i++) {
         player.achievements[141] === 1 ? example20[i].style.display = 'block' : example20[i].style.display = 'none'
-    }
-
-    const example21 = document.getElementsByClassName('ascendunlock') as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < example21.length; i++) {
-        const parent = example21[i].parentElement!;
-        if (parent.classList.contains('offlineStats')) {
-            example21[i].style.display = player.ascensionCount > 0 ? 'flex' : 'none';
-        } else {
-            example21[i].style.display = player.ascensionCount > 0 ? 'block' : 'none';
-        }
-    }
-
-    const example22 = document.getElementsByClassName('chal11') as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < example22.length; i++) {
-        player.challengecompletions[11] > 0 ? example22[i].style.display = 'block' : example22[i].style.display = 'none'
-    }
-
-    const example23 = document.getElementsByClassName('chal12') as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < example23.length; i++) {
-        player.challengecompletions[12] > 0 ? example23[i].style.display = 'block' : example23[i].style.display = 'none'
-    }
-
-    const example24 = document.getElementsByClassName('chal13') as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < example24.length; i++) {
-        player.challengecompletions[13] > 0 ? example24[i].style.display = 'block' : example24[i].style.display = 'none'
-    }
-
-    const example25 = document.getElementsByClassName('chal14') as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < example25.length; i++) {
-        player.challengecompletions[14] > 0 ? example25[i].style.display = 'block' : example25[i].style.display = 'none'
     }
 
     const example26 = document.getElementsByClassName('ascendunlockib') as HTMLCollectionOf<HTMLElement>;
@@ -193,24 +148,9 @@ export const revealStuff = () => {
         ex.style.display = player.achievements[173] === 1 ? 'block' : 'none';
     }
 
-    const example32 = document.getElementsByClassName('hepteracts') as HTMLCollectionOf<HTMLElement>;
-    for (const ex of Array.from(example32)) { // Ability to use and gain hepteracts //
-        ex.style.display = player.challenge15Exponent >= 1e15 ? 'block' : 'none';
-    }
-
     const singularityHTMLs = document.getElementsByClassName('singularity') as HTMLCollectionOf<HTMLElement>;
     for (const HTML of Array.from(singularityHTMLs)) { // Ability to view singularity features.
         HTML.style.display = player.singularityCount > 0 ? 'block' : 'none';
-    }
-
-    const singularityShopItems = document.getElementsByClassName('singularityShopUnlock') as HTMLCollectionOf<HTMLElement>;
-    for (const item of Array.from(singularityShopItems)) { // Ability to buy upgrade tier 1s
-        item.style.display = player.singularityUpgrades.wowPass.getEffect().bonus ? 'block' : 'none';
-    }
-
-    const singularityShopItems2 = document.getElementsByClassName('singularityShopUnlock2') as HTMLCollectionOf<HTMLElement>;
-    for (const item of Array.from(singularityShopItems2)) { // Ability to buy upgrade tier 2s
-        item.style.display = player.singularityUpgrades.wowPass2.getEffect().bonus > 0 ? 'block' : 'none';
     }
 
     const hepts = DOMCacheGetOrSet('corruptionHepteracts');
