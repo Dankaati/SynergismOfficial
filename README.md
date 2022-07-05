@@ -9,7 +9,7 @@ NodeJS - https://nodejs.org/en/ (current, not LTS).
 
 ---
 1. Fork this repository at https://github.com/Pseudo-Corp/SynergismOfficial/fork
-2. Clone the repository you forked with `git clone https://github.com/<USERNAME>/SynergismOfficial` (make sure to change `<USERNAME>` with your own Github username)
+2. Clone the repository you forked with `git clone https://github.com/dankaati/SynergismOfficial` (make sure to change `<USERNAME>` with your own Github username)
 3. Open the repository you just downloaded in VSCode
 4. Install the project dependencies, running `npm install` (or `make install` - If you intend to use `make` from here and on, make sure it is installed first)
 5. Install the liveserver extension for VSCode at https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer (or by searching for `Live Server` inside the Extensions Marketplace in VSCode. You can open the Extensions Marketplace by pressing `Ctrl+Shift+X`)
